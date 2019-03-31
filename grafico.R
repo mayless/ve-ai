@@ -1,0 +1,5 @@
+grafico <- read.table("Datas.txt", header = TRUE, sep = " ")
+sort(grafico$pq)
+sort(grafico$value)
+plot(grafico$pq~grafico$value, main = "Heap X Priority Queue", xlab = "Value", ylab ="Comparations", col="blue")
+points(grafico$Hp~grafico$value, col = "red")
