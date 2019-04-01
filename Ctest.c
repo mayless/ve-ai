@@ -68,6 +68,13 @@ void dequeue_test()
     CU_ASSERT_PTR_EQUAL(freqTop, nodeDequeue->frequency);
 }
 
+void hash_tests()
+{
+	HASH *hashtable = NULL;
+	CU_ASSERT(hashtable == NULL);
+	hashtable = create_hash();
+	CU_ASSERT(hashtable != NULL);
+}
 
 
 
@@ -78,11 +85,11 @@ int main()
 
     //CU_initialize_registry();
     CU_pSuite suite = CU_add_suite("Testing heap features",0,0);
-    CU_add_test(suite,"create_hash test",create_heap_test);
+    CU_add_test(suite,"create_heap test",create_heap_test);
     CU_add_test(suite,"swap test",swap_test);
     CU_add_test(suite,"enqueue test",enqueue_test);
     CU_add_test(suite,"dequeue test",dequeue_test);
-
+		CU_add_test(suite,"create_hash test",hash_tests);
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
